@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>添加案例</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="js/plugins/wangEditor/css/wangEditor.min.css" rel="stylesheet">
+    <link href="js/plugins/ajaxfileupload/ajaxfileupload.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a class="dropdown-toggle" href="ecommerce_products_grid.html#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">黄山大象装饰</strong>
+                            </span> <span class="text-muted text-xs block">hsdaxiang</span> </span> </a>
+                    </div>
+                    <div class="logo-element">
+                        控制台
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">控制台</span></a>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">案例管理</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">设计师管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="graph_flot.html">Flot Charts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">活动管理 </span><span class="label label-warning pull-right">16/24</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="mailbox.html">Inbox</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">预约记录</span>  </a>
+                </li>
+                <li>
+                    <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">免费报价记录</span></a>
+                </li>
+                <li>
+                    <a href="ecommerce_products_grid.html#"><i class="fa fa-edit"></i> <span class="nav-label">系统设置</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="form_basic.html">Basic form</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-success" href="javascript:;"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 安全退出
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>添加案例</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">控制台</a>
+                    </li>
+                    <li class="active">
+                        <strong>添加案例</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5><small>*号为必填项</small></h5>
+
+                        </div>
+                        <div class="ibox-content">
+                            <form method="get" class="form-horizontal">
+                                <div class="form-group"><label class="col-sm-2 control-label">* 案例名称</label>
+
+                                    <div class="col-sm-5"><input type="text" class="form-control"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">* 缩略图</label>
+                                    <div class="col-lg-4">
+                                        <label class="ajaxfileupload">
+                                            <div class="text-center tip {if($data.photourl)}hide{/if}">
+                                                <i class="icon fa fa-file-image-o"></i>
+                                                <p>上传照片</p>
+                                            </div>
+                                            <!--<img src="{$data.photourl}" class="{if(!$data.photourl)}hide{/if}" />-->
+                                            <img src="{$data.photourl}" class="hide" />
+                                            <input type="hidden" name="photourl" id="photo" value="{$data.photourl}" />
+                                            <input type="file" accept="image/gif,image/jpeg,image/png,image/jpg" name="fileupload" id="fileupload" class="hide">
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">* 案例详情</label>
+                                    <div class="col-sm-8">
+                                        <textarea id="content" name="content" style="min-height: 400px;"></textarea>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <button class="btn btn-white" type="submit">返回</button>
+                                        <button class="btn btn-primary" type="submit">保存</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/wangEditor/js/wangEditor.min.js"></script>
+<script src="js/plugins/ajaxfileupload/ajaxfileupload.js"></script>
+
+<script>
+    var editor = new wangEditor('content');
+    //隐藏网络图片插入选项
+    editor.config.hideLinkImg = true;
+    // 普通的自定义菜单
+    editor.config.menus = ['undo', 'redo', '|','bold','underline','italic','strikethrough','eraser','forecolor','bgcolor','unorderlist','orderlist','fontsize','alignleft','aligncenter','alignright','emotion','img'];
+    //关闭LOG输出
+    wangEditor.config.printLog = false;
+    //上传图片配置
+    editor.config.uploadImgUrl='{:url("dashboard/pub/upload")}';
+    editor.config.uploadImgFileName='upfile';
+    //创建编辑器
+    editor.create();
+
+
+    $(function () {
+        $("#fileupload").live('change',function () {
+            var $this=$(this),ajaxbox=$this.parents('.ajaxfileupload');
+            $.ajaxFileUpload({
+                url: '{:url("manage/pub/upload")}', //用于文件上传的服务器端请求地址
+                fileElementId: 'fileupload', //文件上传域的ID
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data, status)  //服务器成功响应处理函数
+                {
+                    if(data.code==200){
+                        ajaxbox.find('img').attr("src", data.data);
+                        ajaxbox.find('img').removeClass('hide');
+                        ajaxbox.find('#photo').val(data.data);
+                        ajaxbox.find('.tip').addClass('hide');
+                    }else{
+                        alert('上传出错');return false;
+                    }
+                },
+                error: function (data, status, e)
+                {
+                    alert(e);
+                }
+            })
+        })
+    })
+
+
+</script>
+</body>
+
+</html>
