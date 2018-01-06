@@ -2903,10 +2903,9 @@ _e(function (E, $) {
         var childNodes = txt.childNodes;
         var childrenLength = childNodes.length;
         var i, childNode, p;
-
         // 处理图片
         $imgs.length && $imgs.each(function () {
-            $(this).wrap('<p>');
+            $(this).wrap('<p class="wang-imgBox"></p>');
         });
 
         // 处理文字

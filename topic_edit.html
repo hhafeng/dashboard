@@ -128,7 +128,7 @@
                                     </div>
                                 </div>
                                 <div class="hr-line-dashed"></div>
-                                <div class="form-group"><label class="col-sm-2 control-label">* 专题详情</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">* 专题详情<br />尽量全用图片</label>
                                     <div class="col-sm-8">
                                         <textarea id="content" name="content" style="min-height: 400px;"></textarea>
                                     </div>
@@ -150,7 +150,7 @@
                             <div class="view-box">
                                 <div class="phone-box">
                                     <div class="phone-title" id="phone-title">请输入专题名称</div>
-                                    <div class="phone-content">
+                                    <div class="phone-content" id="phone-content">
                                         <p>0元搞定 户型设计</p>
                                     </div>
                                 </div>
@@ -190,7 +190,7 @@
 <script>
     var editor = new wangEditor('content');
     //隐藏网络图片插入选项
-    editor.config.hideLinkImg = true;
+    editor.config.hideLinkImg = false;
     // 普通的自定义菜单
     editor.config.menus = ['undo', 'redo', '|','bold','underline','italic','strikethrough','eraser','forecolor','bgcolor','unorderlist','orderlist','fontsize','alignleft','aligncenter','alignright','emotion','img'];
     //关闭LOG输出
@@ -204,7 +204,9 @@
     $('#title').keyup(function(){
         $('#phone-title').html($(this).val());
     })
-
+    editor.$editorContainer.keyup(function(a){
+        $('#phone-content').html(a.target.innerHTML)
+    })
 
 
 
