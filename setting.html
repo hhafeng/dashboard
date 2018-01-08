@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>系统设置</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="js/plugins/ajaxfileupload/ajaxfileupload.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a class="dropdown-toggle" href="ecommerce_products_grid.html#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">黄山大象装饰</strong>
+                            </span> <span class="text-muted text-xs block">hsdaxiang</span> </span> </a>
+                    </div>
+                    <div class="logo-element">
+                        控制台
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">控制台</span></a>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">案例管理</span></a>
+                </li>
+                <li>
+                    <a href="javascript:;"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">设计师管理</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="graph_flot.html">Flot Charts</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="mailbox.html"><i class="fa fa-envelope"></i> <span class="nav-label">活动管理 </span><span class="label label-warning pull-right">16/24</span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="mailbox.html">Inbox</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="metrics.html"><i class="fa fa-pie-chart"></i> <span class="nav-label">预约记录</span>  </a>
+                </li>
+                <li>
+                    <a href="widgets.html"><i class="fa fa-flask"></i> <span class="nav-label">免费报价记录</span></a>
+                </li>
+                <li>
+                    <a href="ecommerce_products_grid.html#"><i class="fa fa-edit"></i> <span class="nav-label">系统设置</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="form_basic.html">Basic form</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-success" href="javascript:;"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 安全退出
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-8">
+                <h2>系统设置</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html">控制台</a>
+                    </li>
+                    <li class="active">
+                        <strong>系统设置</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="tabs-container">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a data-toggle="tab" href="tabs.html#tab-1">图片附件设置</a></li>
+                            <li class=""><a data-toggle="tab" href="tabs.html#tab-2">装修预算器设置</a></li>
+                        </ul>
+                        <form class="form-horizontal">
+                            <div class="tab-content">
+                                    <div id="tab-1" class="tab-pane active">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">* 计算器图片</label>
+                                                <div class="col-lg-4">
+                                                    <label class="ajaxfileupload">
+                                                        <div class="text-center tip {if($data.photourl)}hide{/if}">
+                                                            <i class="icon fa fa-file-image-o"></i>
+                                                            <p>上传照片</p>
+                                                        </div>
+                                                        <!--<img src="{$data.photourl}" class="{if(!$data.photourl)}hide{/if}" />-->
+                                                        <img src="{$data.photourl}" class="hide" />
+                                                        <input type="hidden" name="photourl" id="photo" value="{$data.photourl}" />
+                                                        <input type="file" accept="image/gif,image/jpeg,image/png,image/jpg" name="fileupload" id="fileupload" class="hide">
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="tab-2" class="tab-pane">
+                                        <div class="panel-body">
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">* 材料费</label>
+                                                <div class="col-sm-5">
+                                                    <div class="input-group m-b"><span class="input-group-addon">每平方</span> <input type="text" class="form-control"> <span class="input-group-addon">元</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">* 人工费</label>
+                                                <div class="col-sm-5">
+                                                    <div class="input-group m-b"><span class="input-group-addon">每平方</span> <input type="text" class="form-control"> <span class="input-group-addon">元</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">* 设计费</label>
+                                                <div class="col-sm-5">
+                                                    <div class="input-group m-b"><span class="input-group-addon">每平方</span> <input type="text" class="form-control"> <span class="input-group-addon">元</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-2 control-label">* 质检费</label>
+                                                <div class="col-sm-5">
+                                                    <div class="input-group m-b"><span class="input-group-addon">每平方</span> <input type="text" class="form-control"> <span class="input-group-addon">元</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </form>
+                        <div class="m-md">
+                            <button class="btn btn-success">保存设置</button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/ajaxfileupload/ajaxfileupload.js"></script>
+
+<script>
+
+</script>
+</body>
+
+</html>
